@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "ejWi0Z9+7I2UG3MvTNm8w/Ky+xcdcqLfCzeU1Fz2qT8=",
+  "Source": "MyCrudApp",
+  "BasePath": "_content/MyCrudApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MyCrudApp\\wwwroot",
+      "Source": "MyCrudApp",
+      "ContentRoot": "C:\\Users\\iwg\\MyCrudApp\\wwwroot\\",
+      "BasePath": "_content/MyCrudApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\iwg\\MyCrudApp\\wwwroot\\index.html",
+      "SourceId": "MyCrudApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iwg\\MyCrudApp\\wwwroot\\",
+      "BasePath": "_content/MyCrudApp",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
