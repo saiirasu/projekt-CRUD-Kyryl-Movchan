@@ -1,28 +1,16 @@
-# projekt-CRUD-Kyryl-Movchan
+## 🚀 Rozszerzenie Modułu Produktów (Nowe Funkcjonalności)
 
-Ten projekt to prosta aplikacja CRUD do zarządzania produktami, stworzona w ramach zadania.
+Wprowadzono rozszerzenie funkcjonalności poprzez dodanie dwóch nowych atrybutów do głównej encji `Product`, co stanowi **ulepszenie** i **rozbudowę** istniejącego modułu zarządzania produktami. Zmiany te zostały w pełni zintegrowane na wszystkich poziomach aplikacji (model, API, frontend).
 
-## Użyte Technologie
--   **Backend**: C# z ASP.NET Core Web API
--   **Baza Danych**: SQLite z użyciem Entity Framework Core
--   **Frontend**: Podstawowy HTML, CSS i JavaScript
+### Nowe Atrybuty Produktu:
 
-## Jak uruchomić lokalnie
-1.  Sklonuj repozytorium.
-2.  Otwórz terminal w głównym folderze projektu.
-3.  Uruchom polecenie: `dotnet run`
-4.  Otwórz przeglądarkę i przejdź pod adres URL wyświetlony w terminalu (np. `http://localhost:5262`).
+1.  **`Description`** (`string`): Pełny opis produktu.
+2.  **`InStock`** (`bool`): Flaga wskazująca, czy produkt jest aktualnie dostępny na magazynie.
 
-## Endpointy API
-Aplikacja udostępnia następujące endpointy REST API do zarządzania produktami:
+### Zmiany Architektoniczne:
 
--   `GET /api/products` - Pobiera listę wszystkich produktów.
--   `GET /api/products/{id}` - Pobiera pojedynczy produkt po jego ID.
--   `POST /api/products` - Tworzy nowy produkt.
--   `PUT /api/products/{id}` - Aktualizuje istniejący produkt.
--   `DELETE /api/products/{id}` - Usuwa produkt.
-
-## Zrzut ekranu interfejsu
-Poniżej znajduje się zrzut ekranu interfejsu użytkownika działającej aplikacji:
-
-![Interfejs aplikacji](screenshot.png)
+| Warstwa | Szczegóły implementacji |
+| :--- | :--- |
+| **Model Danych** | Dodano właściwości `Description` i `InStock` do klasy `Product.cs`. Wygenerowano i zastosowano migrację bazy danych. |
+| **API REST** | Zaktualizowano kontroler `ProductsController.cs`. W metodzie `PostProduct` dodano walidację sprawdzającą, czy pole `Description` nie jest puste. Endpointy API poprawnie obsługują przesyłanie i pobieranie nowych pól. |
+| **Frontend** | Zaktualizowano formularz (dodano pole tekstowe dla `Description` i checkbox dla `InStock`). Zaktualizowano tabelę produktów oraz logikę edycji (`editProduct`) do pełnej obsługi nowych atrybutów. |
