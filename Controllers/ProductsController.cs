@@ -36,18 +36,20 @@ public class ProductsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Product>> PostProduct(Product product)
+public async Task<ActionResult<Product>> PostProduct(Product product)
+{
+    if (string.IsNullOrWhiteSpace(product.Name) || 
+        product.Price <= 0 ||
+        string.IsNullOrWhiteSpace(product.Description)) 
     {
-        if (string.IsNullOrWhiteSpace(product.Name) || product.Price <= 0)
-        {
-            return BadRequest("Invalid data");
-        }
-        product.CreatedAt = DateTime.UtcNow;
-        _context.Products.Add(product);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+        
+        return BadRequest("Invalid data: Name, Price, and Description are required and valid."); 
     }
+    product.CreatedAt = DateTime.UtcNow;
+    _context.Products.Add(product);
+    await _context.SaveChangesAsync();
+    return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+}
 
     [HttpPut("{id}")]
     public async Task<IActionResult> PutProduct(int id, Product product)
