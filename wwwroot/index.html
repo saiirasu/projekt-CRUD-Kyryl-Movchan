@@ -37,11 +37,16 @@
 
     <h2>Add/Edit Product</h2>
     <form id="productForm">
+        <form id="productForm">
         <input type="hidden" id="productId">
         <input type="text" id="productName" placeholder="Name" required><br>
         <input type="number" id="productPrice" placeholder="Price" step="0.01" required><br>
         <input type="text" id="productCategory" placeholder="Category" required><br>
+        <input type="text" id="productDescription" placeholder="Description" required><br>
+        <input type="checkbox" id="productInStock">
+        <label for="productInStock">In Stock</label><br>
         <button type="submit">Save</button>
+</form>
     </form>
 
     <h2>Products List</h2>
@@ -52,6 +57,8 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Category</th>
+                <th>Description</th>
+                <th>In Stock</th>
                 <th>Created At</th>
                 <th>Actions</th>
             </tr>
@@ -76,9 +83,19 @@
                     <td>${product.name}</td>
                     <td>${product.price}</td>
                     <td>${product.category}</td>
-                    <td>${new Date(product.createdAt).toLocaleString()}</td>
+                    <td>${product.description}</td>
+                    <td>${product.inStock ? 'Yes' : 'No'}</td>
+                    <td>${new Date(product.createdAt).toLocaleDateString()}</td>
                     <td>
-                        <button onclick="editProduct(${product.id}, '${product.name}', ${product.price}, '${product.category}')">Edit</button>
+                        <button onclick="editProduct(
+                            ${product.id}, 
+                            '${product.name}', 
+                            ${product.price}, 
+                            '${product.category}',
+                            // НОВЫЕ АРГУМЕНТЫ ДЛЯ editProduct
+                            '${product.description}', 
+                            ${product.inStock} 
+                        )">Edit</button>
                         <button onclick="deleteProduct(${product.id})">Delete</button>
                     </td>
                 `;
@@ -92,6 +109,8 @@
                 name: document.getElementById('productName').value,
                 price: parseFloat(document.getElementById('productPrice').value),
                 category: document.getElementById('productCategory').value,
+                description: document.getElementById('productDescription').value,
+                inStock: document.getElementById('productInStock').checked
             };
 
             if (id) { 
@@ -110,14 +129,18 @@
             }
             form.reset();
             document.getElementById('productId').value = '';
+            document.getElementById('productDescription').value = ''; 
+            document.getElementById('productInStock').checked = false; // для checkbox
             getProducts();
         });
 
-        function editProduct(id, name, price, category) {
+       function editProduct(id, name, price, category, description, inStock) { 
             document.getElementById('productId').value = id;
             document.getElementById('productName').value = name;
             document.getElementById('productPrice').value = price;
             document.getElementById('productCategory').value = category;
+            document.getElementById('productDescription').value = description;
+            document.getElementById('productInStock').checked = inStock; 
         }
 
         async function deleteProduct(id) {
