@@ -27,4 +27,3 @@ Encja `Product` zawiera następujące pola:
 Aplikacja została wdrożona i jest dostępna publicznie pod adresem:
 
 -   **Aplikacja (Frontend + Backend):**https://projekt-crud-kyryl-movchan.onrender.com
--   **(API Endpoint):** https://projekt-crud-kyryl-movchan.onrender.com/api/products
