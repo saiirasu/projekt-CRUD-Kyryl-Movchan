@@ -1,1 +1,39 @@
-{"Version":1,"Hash":"vQmGAhKO1TcPA/wtPb3DNz4Adqf9mTr/Ld6sBhhjK3g=","Source":"MyCrudApp","BasePath":"_content/MyCrudApp","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[{"Name":"MyCrudApp\\wwwroot","Source":"MyCrudApp","ContentRoot":"C:\\Users\\egopr\\Documents\\GitHub\\projekt-CRUD-Kyryl-Movchan\\wwwroot\\","BasePath":"_content/MyCrudApp","Pattern":"**"}],"Assets":[{"Identity":"C:\\Users\\egopr\\Documents\\GitHub\\projekt-CRUD-Kyryl-Movchan\\wwwroot\\index.html","SourceId":"MyCrudApp","SourceType":"Discovered","ContentRoot":"C:\\Users\\egopr\\Documents\\GitHub\\projekt-CRUD-Kyryl-Movchan\\wwwroot\\","BasePath":"_content/MyCrudApp","RelativePath":"index#[.{fingerprint}]?.html","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"pdu5vx1gwm","Integrity":"DdzY6yAq555F3ThFKPu1cpuEI36RXO7XJD818U1vGGc=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\index.html","FileLength":5558,"LastWriteTime":"2025-10-21T21:06:17+00:00"}],"Endpoints":[{"Route":"index.html","AssetFile":"C:\\Users\\egopr\\Documents\\GitHub\\projekt-CRUD-Kyryl-Movchan\\wwwroot\\index.html","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"5558"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\"DdzY6yAq555F3ThFKPu1cpuEI36RXO7XJD818U1vGGc=\""},{"Name":"Last-Modified","Value":"Tue, 21 Oct 2025 21:06:17 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-DdzY6yAq555F3ThFKPu1cpuEI36RXO7XJD818U1vGGc="}]},{"Route":"index.pdu5vx1gwm.html","AssetFile":"C:\\Users\\egopr\\Documents\\GitHub\\projekt-CRUD-Kyryl-Movchan\\wwwroot\\index.html","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"5558"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\"DdzY6yAq555F3ThFKPu1cpuEI36RXO7XJD818U1vGGc=\""},{"Name":"Last-Modified","Value":"Tue, 21 Oct 2025 21:06:17 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"pdu5vx1gwm"},{"Name":"label","Value":"index.html"},{"Name":"integrity","Value":"sha256-DdzY6yAq555F3ThFKPu1cpuEI36RXO7XJD818U1vGGc="}]}]}
+{
+  "Version": 1,
+  "Hash": "1K4QHpI+gOYEAjrcmwwiz1LST4QLWXJ0aqW6/qZSHqg=",
+  "Source": "MyCrudApp",
+  "BasePath": "_content/MyCrudApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MyCrudApp\\wwwroot",
+      "Source": "MyCrudApp",
+      "ContentRoot": "C:\\Users\\iwg\\MyCrudApp\\wwwroot\\",
+      "BasePath": "_content/MyCrudApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\iwg\\MyCrudApp\\wwwroot\\index.html",
+      "SourceId": "MyCrudApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iwg\\MyCrudApp\\wwwroot\\",
+      "BasePath": "_content/MyCrudApp",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

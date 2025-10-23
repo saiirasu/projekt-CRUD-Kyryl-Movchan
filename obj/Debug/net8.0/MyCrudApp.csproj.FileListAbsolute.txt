@@ -12,7 +12,6 @@ C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\MyCrudApp.deps.json
 C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\MyCrudApp.runtimeconfig.json
 C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\MyCrudApp.dll
 C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\MyCrudApp.pdb
-C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
 C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -322,3 +321,6 @@ C:\Users\egopr\Documents\GitHub\projekt-CRUD-Kyryl-Movchan\obj\Debug\net8.0\refi
 C:\Users\egopr\Documents\GitHub\projekt-CRUD-Kyryl-Movchan\obj\Debug\net8.0\MyCrudApp.pdb
 C:\Users\egopr\Documents\GitHub\projekt-CRUD-Kyryl-Movchan\obj\Debug\net8.0\MyCrudApp.genruntimeconfig.cache
 C:\Users\egopr\Documents\GitHub\projekt-CRUD-Kyryl-Movchan\obj\Debug\net8.0\ref\MyCrudApp.dll
+C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\iwg\MyCrudApp\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\iwg\MyCrudApp\obj\Debug\net8.0\MyCrudApp.sourcelink.json
