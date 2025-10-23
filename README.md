@@ -1,16 +1,30 @@
-## 🚀 Rozszerzenie Modułu Produktów (Nowe Funkcjonalności)
+# Projekt CRUD - Product Manager
 
-Wprowadzono rozszerzenie funkcjonalności poprzez dodanie dwóch nowych atrybutów do głównej encji `Product`, co stanowi **ulepszenie** i **rozbudowę** istniejącego modułu zarządzania produktami. Zmiany te zostały w pełni zintegrowane na wszystkich poziomach aplikacji (model, API, frontend).
+To jest projekt w ramach kursu "Projekt zespołowy", który implementuje pełną aplikację CRUD (Create, Read, Update, Delete) dla encji "Produkt". Aplikacja składa się z backendu (.NET Web API) oraz prostego frontendu (HTML/JS/CSS).
 
-### Nowe Atrybuty Produktu:
+## Użyte Technologie
+-   **Backend**: C# z ASP.NET Core Web API
+-   **Baza Danych**: SQLite z użyciem Entity Framework Core
+-   **Frontend**: Podstawowy HTML, CSS i JavaScript
 
-1.  **`Description`** (`string`): Pełny opis produktu.
-2.  **`InStock`** (`bool`): Flaga wskazująca, czy produkt jest aktualnie dostępny na magazynie.
+## Struktura encji (Model)
+Encja `Product` zawiera następujące pola:
+* `Id` (int) - Klucz główny
+* `Name` (string) - Nazwa produktu
+* `Price` (decimal) - Cena
+* `Category` (string) - Kategoria
+* `CreatedAt` (DateTime) - Data utworzenia
+* `Description` (string) - Opis produktu (dodane w ramach zadania B)
+* `InStock` (bool) - Czy dostępny (dodane w ramach zadania B)
 
-### Zmiany Architektoniczne:
+## Jak uruchomić lokalnie
+1.  Sklonuj repozytorium.
+2.  Otwórz terminal w głównym folderze projektu.
+3.  Uruchom polecenie: `dotnet run`
+4.  Otwórz przeglądarkę i przejdź pod adres `http://localhost:5262` (lub inny port wskazany w konsoli).
 
-| Warstwa | Szczegóły implementacji |
-| :--- | :--- |
-| **Model Danych** | Dodano właściwości `Description` i `InStock` do klasy `Product.cs`. Wygenerowano i zastosowano migrację bazy danych. |
-| **API REST** | Zaktualizowano kontroler `ProductsController.cs`. W metodzie `PostProduct` dodano walidację sprawdzającą, czy pole `Description` nie jest puste. Endpointy API poprawnie obsługują przesyłanie i pobieranie nowych pól. |
-| **Frontend** | Zaktualizowano formularz (dodano pole tekstowe dla `Description` i checkbox dla `InStock`). Zaktualizowano tabelę produktów oraz logikę edycji (`editProduct`) do pełnej obsługi nowych atrybutów. |
+## 🚀 Wdrożenie Online (Live Demo)
+Aplikacja została wdrożona i jest dostępna publicznie pod adresem:
+
+-   **Aplikacja (Frontend + Backend):** [wstaw_swoj_link_z_render_tutaj]
+-   **(API Endpoint):** [wstaw_swoj_link_z_render_tutaj]/api/products
