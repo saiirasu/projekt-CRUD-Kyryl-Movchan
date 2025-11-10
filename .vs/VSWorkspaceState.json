@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\MyCrudApp.Tests",
+    "\\MyCrudApp.Tests\\bin",
+    "\\MyCrudApp.Tests\\obj",
+    "\\MyCrudApp.Tests\\obj\\Debug",
+    "\\MyCrudApp.Tests\\obj\\Release",
+    "\\Properties",
     "\\wwwroot"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\projekt-CRUD-Kyryl-Movchan.sln",
   "PreviewInSolutionExplorer": false
 }
