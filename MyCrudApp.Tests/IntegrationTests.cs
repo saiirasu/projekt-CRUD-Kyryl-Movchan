@@ -11,7 +11,7 @@ using MyCrudApp.Models;
 
 namespace MyCrudApp.Tests;
 
-public class TestWebAppFactory : WebApplicationFactory<Program>
+public class TestWebAppFactory : WebApplicationFactory<Program> 
 {
     protected override IHost CreateHost(IHostBuilder builder)
     {
@@ -48,7 +48,6 @@ public class IntegrationTests : IClassFixture<TestWebAppFactory>
     public async Task Get_NonExistentProduct_ShouldReturnNotFound()
     {
         var response = await _client.GetAsync("/api/products/9999");
-
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
 
@@ -57,21 +56,16 @@ public class IntegrationTests : IClassFixture<TestWebAppFactory>
     {
         var invalidProduct = new { Name = "Test Product", Price = -10, Category = "Test", Description = "Test" };
         var jsonContent = new StringContent(JsonSerializer.Serialize(invalidProduct), Encoding.UTF8, "application/json");
-
         var response = await _client.PostAsync("/api/products", jsonContent);
-
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 
     [Fact]
     public async Task Post_ProductWithMissingName_ShouldReturnBadRequest()
     {
-
         var invalidProduct = new { Price = 100, Category = "Test", Description = "Test" };
         var jsonContent = new StringContent(JsonSerializer.Serialize(invalidProduct), Encoding.UTF8, "application/json");
-
         var response = await _client.PostAsync("/api/products", jsonContent);
-
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 }
