@@ -5,11 +5,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            padding: 20px;
         }
 
         table {
             border-collapse: collapse;
             width: 100%;
+            margin-top: 20px;
         }
 
         th, td {
@@ -21,13 +23,18 @@
             background-color: #f2f2f2;
         }
 
-        input {
+        input[type="text"], input[type="number"] {
             padding: 5px;
             margin-bottom: 10px;
+            width: 300px;
         }
 
         button {
             padding: 5px 10px;
+        }
+
+        input:invalid {
+            border-color: red;
         }
     </style>
 </head>
@@ -37,16 +44,23 @@
 
     <h2>Add/Edit Product</h2>
     <form id="productForm">
-        <form id="productForm">
         <input type="hidden" id="productId">
-        <input type="text" id="productName" placeholder="Name" required><br>
-        <input type="number" id="productPrice" placeholder="Price" step="0.01" required><br>
+
+        Name: <br>
+        <input type="text" id="productName" placeholder="Name" required minlength="3" maxlength="50"><br>
+
+        Price: <br>
+        <input type="number" id="productPrice" placeholder="Price" required min="0" max="99999"><br>
+
+        Category: <br>
         <input type="text" id="productCategory" placeholder="Category" required><br>
-        <input type="text" id="productDescription" placeholder="Description" required><br>
-        <input type="checkbox" id="productInStock">
-        <label for="productInStock">In Stock</label><br>
+
+        Description: <br>
+        <input type="text" id="productDescription" placeholder="Description" required maxlength="200"><br>
+
+        <input type="checkbox" id="productInStock"> In Stock<br>
+
         <button type="submit">Save</button>
-</form>
     </form>
 
     <h2>Products List</h2>
@@ -68,7 +82,7 @@
     </table>
 
     <script>
-        const apiUrl = '/api/products';
+        const apiUrl = 'https://projekt-crud-kyryl-movchan.onrender.com/api/products';
         const form = document.getElementById('productForm');
         const tableBody = document.querySelector('#productsTable tbody');
 
@@ -79,26 +93,18 @@
             products.forEach(product => {
                 const row = tableBody.insertRow();
                 row.innerHTML = `
-                    <td>${product.id}</td>
-                    <td>${product.name}</td>
-                    <td>${product.price}</td>
-                    <td>${product.category}</td>
-                    <td>${product.description}</td>
-                    <td>${product.inStock ? 'Yes' : 'No'}</td>
-                    <td>${new Date(product.createdAt).toLocaleDateString()}</td>
-                    <td>
-                        <button onclick="editProduct(
-                            ${product.id}, 
-                            '${product.name}', 
-                            ${product.price}, 
-                            '${product.category}',
-                            // НОВЫЕ АРГУМЕНТЫ ДЛЯ editProduct
-                            '${product.description}', 
-                            ${product.inStock} 
-                        )">Edit</button>
-                        <button onclick="deleteProduct(${product.id})">Delete</button>
-                    </td>
-                `;
+                        <td>${product.id}</td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
+                        <td>${product.category}</td>
+                        <td>${product.description}</td>
+                        <td>${product.inStock ? 'Yes' : 'No'}</td>
+                        <td>${new Date(product.createdAt).toLocaleString()}</td>
+                        <td>
+                            <button onclick="editProduct(${product.id}, '${product.name}', ${product.price}, '${product.category}', '${product.description}', ${product.inStock})">Edit</button>
+                            <button onclick="deleteProduct(${product.id})">Delete</button>
+                        </td>
+                    `;
             });
         }
 
@@ -113,34 +119,33 @@
                 inStock: document.getElementById('productInStock').checked
             };
 
-            if (id) { 
+            let method = 'POST';
+            let url = apiUrl;
+
+            if (id) {
+                method = 'PUT';
+                url = `${apiUrl}/${id}`;
                 product.id = parseInt(id);
-                await fetch(`${apiUrl}/${id}`, {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(product)
-                });
-            } else { 
-                await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(product)
-                });
             }
+
+            await fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(product)
+            });
+
             form.reset();
             document.getElementById('productId').value = '';
-            document.getElementById('productDescription').value = ''; 
-            document.getElementById('productInStock').checked = false; 
             getProducts();
         });
 
-       function editProduct(id, name, price, category, description, inStock) { 
+        function editProduct(id, name, price, category, description, inStock) {
             document.getElementById('productId').value = id;
             document.getElementById('productName').value = name;
             document.getElementById('productPrice').value = price;
             document.getElementById('productCategory').value = category;
             document.getElementById('productDescription').value = description;
-            document.getElementById('productInStock').checked = inStock; 
+            document.getElementById('productInStock').checked = inStock;
         }
 
         async function deleteProduct(id) {
