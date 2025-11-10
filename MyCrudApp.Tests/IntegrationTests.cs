@@ -11,7 +11,7 @@ using MyCrudApp.Models;
 
 namespace MyCrudApp.Tests;
 
-class TestWebAppFactory : WebApplicationFactory<Program>
+public class TestWebAppFactory : WebApplicationFactory<Program>
 {
     protected override IHost CreateHost(IHostBuilder builder)
     {
