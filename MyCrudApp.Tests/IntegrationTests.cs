@@ -34,7 +34,7 @@ internal class TestWebAppFactory : WebApplicationFactory<Program>
     }
 }
 
-public class IntegrationTests : IClassFixture<TestWebAppFactory>
+internal class IntegrationTests : IClassFixture<TestWebAppFactory>
 {
     private readonly HttpClient _client;
 
