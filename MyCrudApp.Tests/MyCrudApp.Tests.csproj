@@ -34,4 +34,5 @@
 		<ProjectReference Include="..\MyCrudApp.csproj" />
 	</ItemGroup>
 
+	
 </Project>
