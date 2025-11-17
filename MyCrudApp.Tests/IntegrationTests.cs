@@ -7,11 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyCrudApp;
-using MyCrudApp.Models;
 
 namespace MyCrudApp.Tests;
 
-public class TestWebAppFactory : WebApplicationFactory<Program> 
+internal class TestWebAppFactory : WebApplicationFactory<Program>
 {
     protected override IHost CreateHost(IHostBuilder builder)
     {
