@@ -4,7 +4,6 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-
 		<IsPackable>false</IsPackable>
 		<IsTestProject>true</IsTestProject>
 	</PropertyGroup>
@@ -20,12 +19,9 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.14" />
 		<PackageReference Include="coverlet.collector" Version="6.0.0" />
 	</ItemGroup>
-	
 
 	<ItemGroup>
 		<ProjectReference Include="..\MyCrudApp\MyCrudApp.csproj" />
 	</ItemGroup>
 
-	
-	
 </Project>

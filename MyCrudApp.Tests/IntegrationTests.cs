@@ -7,10 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyCrudApp;
-using Xunit; 
+using Xunit;
 
 namespace MyCrudApp.Tests;
-
 
 public class TestWebAppFactory : WebApplicationFactory<Program>
 {
@@ -35,7 +34,6 @@ public class TestWebAppFactory : WebApplicationFactory<Program>
         return base.CreateHost(builder);
     }
 }
-
 
 public class IntegrationTests : IClassFixture<TestWebAppFactory>
 {
