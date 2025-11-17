@@ -1,0 +1,8 @@
+# C#
+[Oo]bj/
+[Bb]in/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
