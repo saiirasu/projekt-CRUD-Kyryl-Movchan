@@ -31,7 +31,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\MyCrudApp.csproj" />
+		<ProjectReference Include="..\MyCrudApp\MyCrudApp.csproj" />
 	</ItemGroup>
 
 	
