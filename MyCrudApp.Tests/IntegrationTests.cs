@@ -11,7 +11,8 @@ using Xunit;
 
 namespace MyCrudApp.Tests;
 
-internal class TestWebAppFactory : WebApplicationFactory<Program>
+
+public class TestWebAppFactory : WebApplicationFactory<Program>
 {
     protected override IHost CreateHost(IHostBuilder builder)
     {
@@ -35,7 +36,8 @@ internal class TestWebAppFactory : WebApplicationFactory<Program>
     }
 }
 
-internal class IntegrationTests : IClassFixture<TestWebAppFactory>
+
+public class IntegrationTests : IClassFixture<TestWebAppFactory>
 {
     private readonly HttpClient _client;
 
