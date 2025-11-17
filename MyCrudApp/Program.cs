@@ -16,7 +16,7 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
 
-    if (!dbContext.Database.IsInMemory())
+    if (dbContext.Database.ProviderName != "Microsoft.EntityFrameworkCore.InMemory")
     {
         dbContext.Database.Migrate();
     }
@@ -28,7 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
